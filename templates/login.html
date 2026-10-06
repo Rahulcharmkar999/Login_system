@@ -1,0 +1,451 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Login | My Website</title>
+
+
+    <style>
+
+        /* ==============================
+           GLOBAL
+        ============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            min-height: 100vh;
+
+            font-family: "Segoe UI", Arial, sans-serif;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0f172a,
+                    #1e3a8a,
+                    #2563eb
+                );
+
+            padding: 25px;
+        }
+
+
+        /* ==============================
+           LOGIN CARD
+        ============================== */
+
+        .login-container {
+
+            width: 400px;
+            max-width: 100%;
+
+            background: rgba(255, 255, 255, 0.97);
+
+            padding: 38px;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.25);
+
+            animation: fadeIn 0.6s ease;
+        }
+
+
+        /* ==============================
+           ANIMATION
+        ============================== */
+
+        @keyframes fadeIn {
+
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* ==============================
+           HEADING
+        ============================== */
+
+        .heading {
+
+            text-align: center;
+
+            margin-bottom: 30px;
+        }
+
+
+        .heading h1 {
+
+            color: #0f172a;
+
+            font-size: 30px;
+
+            font-weight: 700;
+
+            margin-bottom: 7px;
+        }
+
+
+        .heading p {
+
+            color: #64748b;
+
+            font-size: 14px;
+        }
+
+
+        /* ==============================
+           MESSAGE
+        ============================== */
+
+        .message {
+
+            background: #ecfdf5;
+
+            color: #047857;
+
+            border: 1px solid #a7f3d0;
+
+            padding: 11px 14px;
+
+            margin-bottom: 20px;
+
+            border-radius: 8px;
+
+            text-align: center;
+
+            font-size: 14px;
+        }
+
+
+        /* ==============================
+           FORM GROUP
+        ============================== */
+
+        .form-group {
+
+            margin-bottom: 19px;
+        }
+
+
+        label {
+
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: #334155;
+
+            font-size: 14px;
+
+            font-weight: 600;
+        }
+
+
+        /* ==============================
+           INPUT
+        ============================== */
+
+        input[type="text"],
+        input[type="password"] {
+
+            width: 100%;
+
+            padding: 13px 14px;
+
+            border: 1px solid #cbd5e1;
+
+            border-radius: 9px;
+
+            outline: none;
+
+            background: #f8fafc;
+
+            color: #1e293b;
+
+            font-size: 15px;
+
+            transition: all 0.3s ease;
+        }
+
+
+        input::placeholder {
+
+            color: #94a3b8;
+        }
+
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+
+            background: #ffffff;
+
+            border-color: #2563eb;
+
+            box-shadow:
+                0 0 0 3px rgba(37, 99, 235, 0.12);
+        }
+
+
+        /* ==============================
+           LOGIN BUTTON
+        ============================== */
+
+        .login-btn {
+
+            width: 100%;
+
+            padding: 13px;
+
+            margin-top: 5px;
+
+            border: none;
+
+            border-radius: 9px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #1d4ed8
+                );
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: all 0.3s ease;
+
+            box-shadow:
+                0 5px 15px rgba(37, 99, 235, 0.25);
+        }
+
+
+        .login-btn:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 20px rgba(37, 99, 235, 0.35);
+        }
+
+
+        .login-btn:active {
+
+            transform: translateY(0);
+        }
+
+
+        /* ==============================
+           SIGN UP LINK
+        ============================== */
+
+        .signup-link {
+
+            text-align: center;
+
+            margin-top: 23px;
+
+            color: #64748b;
+
+            font-size: 14px;
+        }
+
+
+        .signup-link a {
+
+            color: #2563eb;
+
+            text-decoration: none;
+
+            font-weight: 600;
+
+            margin-left: 3px;
+
+            transition: 0.3s;
+        }
+
+
+        .signup-link a:hover {
+
+            color: #1d4ed8;
+
+            text-decoration: underline;
+        }
+
+
+        /* ==============================
+           MOBILE
+        ============================== */
+
+        @media (max-width: 480px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .login-container {
+
+                padding: 28px 22px;
+
+                border-radius: 15px;
+            }
+
+            .heading h1 {
+
+                font-size: 26px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==============================
+         LOGIN CONTAINER
+    ============================== -->
+
+    <div class="login-container">
+
+
+        <!-- Heading -->
+
+        <div class="heading">
+
+            <h1>Welcome Back</h1>
+
+            <p>Login to continue to your account</p>
+
+        </div>
+
+
+        <!-- Django Messages -->
+
+        {% if messages %}
+
+            {% for msg in messages %}
+
+                <div class="message">
+
+                    {{ msg }}
+
+                </div>
+
+            {% endfor %}
+
+        {% endif %}
+
+
+        <!-- Login Form -->
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+
+            <!-- Username -->
+
+            <div class="form-group">
+
+                <label for="username">
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    name="uname"
+                    placeholder="Enter your username"
+                    autocomplete="username"
+                    required>
+
+            </div>
+
+
+            <!-- Password -->
+
+            <div class="form-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                    required>
+
+            </div>
+
+
+            <!-- Login Button -->
+
+            <button
+                type="submit"
+                class="login-btn">
+
+                Login
+
+            </button>
+
+        </form>
+
+
+        <!-- Sign Up -->
+
+        <div class="signup-link">
+
+            Don't have an account?
+
+            <a href="{% url 'signup' %}">
+                Sign Up
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
+

@@ -1,0 +1,91 @@
+
+<html>
+<head>
+    <title>Employee Dashboard</title>
+</head>
+<body>
+
+<style>
+
+    /* ===== DASHBOARD ===== */
+
+    .dashboard-container {
+        min-height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+    }
+
+    .dashboard-card {
+        width: 600px;
+        background: white;
+        padding: 50px 40px;
+        text-align: center;
+        border-radius: 20px;
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+    }
+
+    .dashboard-card h1 {
+        color: #1f2937;
+        margin-bottom: 15px;
+    }
+
+    .welcome-user {
+        font-size: 22px;
+        color: #2563eb;
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+
+    .dashboard-text {
+        color: #6b7280;
+        font-size: 17px;
+        margin-bottom: 30px;
+    }
+
+    .logout-btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background: #dc2626;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    .logout-btn:hover {
+        background: #b91c1c;
+        color: white;
+        transform: translateY(-3px);
+    }
+
+</style>
+
+
+<div class="dashboard-container">
+
+    <div class="dashboard-card">
+
+        <h1>Welcome to Dashboard 🎉</h1>
+
+        <div class="welcome-user">
+            Hi, {{ request.user.username }}!
+        </div>
+
+        <p class="dashboard-text">
+            You have successfully logged in to your account.
+        </p>
+
+        <a href="{% url 'logout' %}" class="logout-btn">
+            Logout
+        </a>
+
+    </div>
+
+</div>
+</body>
+</html>
+
+

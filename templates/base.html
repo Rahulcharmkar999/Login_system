@@ -1,0 +1,479 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <title>My Website</title>
+
+    <style>
+
+        /* ==============================
+           GLOBAL
+        ============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f5f7fb;
+            color: #1f2937;
+            min-height: 100vh;
+        }
+
+
+        /* ==============================
+           NAVBAR
+        ============================== */
+
+        .navbar {
+            background: linear-gradient(135deg, #0f172a, #1e293b) !important;
+            padding: 14px 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+
+        /* ==============================
+           BRAND
+        ============================== */
+
+        .navbar-brand {
+            color: #ffffff !important;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            transition: 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            color: #38bdf8 !important;
+            transform: translateY(-1px);
+        }
+
+
+        /* ==============================
+           NAVIGATION
+        ============================== */
+
+        .navbar-nav {
+            gap: 5px;
+        }
+
+        .nav-link {
+            color: #cbd5e1 !important;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 9px 16px !important;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #ffffff !important;
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-1px);
+        }
+
+        .nav-link.active {
+            color: #ffffff !important;
+            background: #2563eb;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+
+        /* ==============================
+           SEARCH
+        ============================== */
+
+        .search-form {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .form-control {
+            width: 220px;
+            height: 42px;
+            border: 1px solid #334155;
+            border-radius: 25px;
+            padding: 8px 16px;
+            background: #ffffff;
+            font-size: 14px;
+            transition: 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: #38bdf8;
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+            outline: none;
+        }
+
+
+        /* ==============================
+           SEARCH BUTTON
+        ============================== */
+
+        .search-btn {
+            height: 42px;
+            padding: 8px 20px;
+            border: 1px solid #38bdf8;
+            border-radius: 25px;
+            color: #ffffff;
+            font-weight: 500;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .search-btn:hover {
+            background: #38bdf8;
+            color: #0f172a;
+            transform: translateY(-1px);
+        }
+
+
+        /* ==============================
+           MOBILE TOGGLE
+        ============================== */
+
+        .navbar-toggler {
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 7px 10px;
+            border-radius: 8px;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+        }
+
+
+        /* ==============================
+           PAGE CONTENT
+        ============================== */
+
+        .page-content {
+            min-height: calc(100vh - 72px);
+            padding: 45px 25px;
+        }
+
+
+        /* ==============================
+           CONTENT CARD
+        ============================== */
+
+        .content-container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+
+        /* ==============================
+           MOBILE RESPONSIVE
+        ============================== */
+
+        @media (max-width: 991px) {
+
+            .navbar {
+                padding: 13px 18px;
+            }
+
+            .navbar-nav {
+                margin-top: 15px;
+                gap: 4px;
+            }
+
+            .nav-link {
+                padding: 10px 15px !important;
+            }
+
+            .search-form {
+                margin-top: 15px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .form-control {
+                width: 100%;
+                height: 44px;
+            }
+
+            .search-btn {
+                width: 100%;
+                height: 44px;
+            }
+
+            .page-content {
+                padding: 30px 15px;
+            }
+        }
+
+
+        /* ==============================
+           SMALL MOBILE
+        ============================== */
+
+        @media (max-width: 576px) {
+
+            .navbar-brand {
+                font-size: 21px;
+            }
+
+            .page-content {
+                padding: 25px 12px;
+            }
+        }
+        .home-container {
+        min-height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+
+    /* ===== HOME CARD ===== */
+
+    .home-card {
+        width: 600px;
+        padding: 50px 40px;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+    }
+
+
+    /* ===== HEADING ===== */
+
+    .home-card h1 {
+        font-size: 45px;
+        font-weight: 700;
+        color: #1f2937;
+        margin-bottom: 15px;
+    }
+
+
+    /* ===== DESCRIPTION ===== */
+
+    .home-card p {
+        font-size: 18px;
+        color: #6b7280;
+        margin-bottom: 35px;
+    }
+
+
+    /* ===== BUTTON CONTAINER ===== */
+
+    .home-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+
+    /* ===== BUTTONS ===== */
+
+    .home-btn {
+        display: inline-block;
+        padding: 12px 30px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+
+    /* LOGIN BUTTON */
+
+    .login-btn {
+        background: #2563eb;
+        color: white;
+    }
+
+    .login-btn:hover {
+        background: #1d4ed8;
+        color: white;
+        transform: translateY(-3px);
+    }
+
+
+    /* SIGNUP BUTTON */
+
+    .signup-btn {
+        background: #16a34a;
+        color: white;
+    }
+
+    .signup-btn:hover {
+        background: #15803d;
+        color: white;
+        transform: translateY(-3px);
+    }
+
+
+    /* ===== MOBILE ===== */
+
+    @media (max-width: 600px) {
+
+        .home-card {
+            width: 100%;
+            padding: 40px 20px;
+        }
+
+        .home-card h1 {
+            font-size: 35px;
+        }
+
+        .home-card p {
+            font-size: 16px;
+        }
+
+        .home-btn {
+            width: 100%;
+        }
+    }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- ==============================
+         NAVBAR
+    ============================== -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+
+        <div class="container-fluid">
+
+            <!-- Website Name -->
+            <a class="navbar-brand" href="{% url 'base' %}">
+                My Website
+            </a>
+
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <!-- Navbar Content -->
+            <div class="collapse navbar-collapse"
+                 id="navbarSupportedContent">
+
+                <!-- Navigation Links -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
+                    <!-- Sign Up -->
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="{% url 'signup' %}">
+                            Sign Up
+                        </a>
+                    </li>
+
+
+                    <!-- Login -->
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="{% url 'login' %}">
+                            Login
+                        </a>
+                    </li>
+
+                </ul>
+
+
+                <!-- Search -->
+                <form class="search-form">
+
+                    <input class="form-control"
+                           type="search"
+                           placeholder="Search..."
+                           aria-label="Search">
+
+                    <button class="search-btn"
+                            type="submit">
+                        Search
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <main class="page-content">
+
+        <div class="content-container">
+
+            <div class="home-container">
+
+    <div class="home-card">
+
+        <h1>Welcome to My Website 👋</h1>
+
+        <p>
+            Welcome! Please login or create a new account
+            to continue.
+        </p>
+
+        <div class="home-buttons">
+
+            <a href="{% url 'login' %}"
+               class="home-btn login-btn">
+                Login
+            </a>
+
+            <a href="{% url 'signup' %}"
+               class="home-btn signup-btn">
+                Sign Up
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+        </div>
+
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+</body>
+
+</html>
